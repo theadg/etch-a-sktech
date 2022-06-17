@@ -1,0 +1,31 @@
+*, 
+*::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.grid-container{
+    /* centering the container */
+    margin: 0 auto;
+
+    /* size of the container */
+    height: 320px;
+    width: 320px;
+    background-color: antiquewhite;
+
+    
+    /* displaying grid items */
+    display: grid;
+    grid-template-columns: repeat(16, 20px);
+    grid-template-rows: repeat(16, 20px);
+}
+
+.grid-item{
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+}
+
