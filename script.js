@@ -44,5 +44,11 @@ function resetGrid(){
     while (gridContainer.firstChild){
       gridContainer.removeChild(gridContainer.firstChild);
     }
-    
   }
+
+  //whenever the size slider changes, the functions inside
+gridSizeSlider.onchange = (e) =>{
+    const gridSize = (e.target.value);
+    resetGrid(); 
+    changeGridSize(gridSize);
+};
