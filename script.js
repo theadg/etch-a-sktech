@@ -73,3 +73,14 @@ eraseBtn.onclick = () => {
     coloringMode = 'eraser';
    
 };
+
+//sets the color to use in the canvas
+function changeColorMain(e){
+    if (e.type === 'mouseover' && !mouseDown) return
+    else if (coloringMode === 'color')
+    e.target.style.backgroundColor = `${currentColor}`;
+    else if (coloringMode === 'eraser')
+    e.target.style.backgroundColor = `${bgColorPicker.value }`;
+    else if (coloringMode === 'rainbow')
+    e.target.style.backgroundColor = `rgb(${randomRgbColor()})`;
+}
