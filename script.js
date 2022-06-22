@@ -23,6 +23,9 @@ gridSizeSlider.oninput = (e) => {
      updateSizeValue(e.target.value);
 };
 
+
+changeGridSize();  //calling the function for it to run
+
 //adjust the grid size based on user input
 function changeGridSize(gridSize = 16){
  
@@ -51,4 +54,16 @@ gridSizeSlider.onchange = (e) =>{
     const gridSize = (e.target.value);
     resetGrid(); 
     changeGridSize(gridSize);
+};
+
+//whenever color is selected, the current color of the color picker
+//is used to sketch
+colorMode.onclick = () => {
+    currentColor = color.value;
+    coloringMode = 'color';
+};
+    
+//getting the color of the colorPicker
+color.oninput = (e) => {
+    currentColor = e.target.value;
 };
