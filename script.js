@@ -67,3 +67,9 @@ colorMode.onclick = () => {
 color.oninput = (e) => {
     currentColor = e.target.value;
 };
+
+//changes color mode to eraser
+eraseBtn.onclick = () => {
+    coloringMode = 'eraser';
+   
+};
