@@ -95,4 +95,30 @@ document.body.onmouseup = () => (mouseDown = false);
 bgColorPicker.oninput = () => gridContainer.style.backgroundColor = bgColorPicker.value;
 gridContainer.style.backgroundColor = bgColorPicker.value;
 
+//changes coloring mode to rainbow
+randomRgb.onclick = () => {
+    coloringMode = 'rainbow';
+    };
+
+
+//clears the grid by coloring them to default color
+clearBtn.onclick = () => {
+    
+    countItems();
+    containerItems.forEach((item)=> {
+        item.style.backgroundColor =  `${bgColorPicker.value}`;
+
+    });
+};
+
+//returns a random rgb color
+function randomRgbColor(){
+    let rgbRed = Math.floor(Math.random()*(255+1));
+    let rgbGreen = Math.floor(Math.random()*(255+1));
+    let rgbBlue = Math.floor(Math.random()*(255+1));    
+    return [rgbRed, rgbGreen, rgbBlue];
+    // const randomColor =[rgbRed, rgbGreen, rgbBlue];
+    // return randomColor;
+}
+
 
