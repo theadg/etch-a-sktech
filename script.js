@@ -1,23 +1,16 @@
-//Checking if js is linked properly
-console.log("Hello world");
-
-
 
 const container = document.getElementById('gridContainer');
-const containerItems = document.querySelectorAll('#gridItem');
+const sizeLabel = document.getElementById("sizeLabel");
+const gridSizeSlider =  document.getElementById("gridSizeSlider");
+const gridContainer = document.getElementById("gridContainer");
+const color = document.getElementById("colorPicker");
+const clearBtn = document.getElementById("clearBtn");
+const eraseBtn = document.getElementById("eraseBtn");
+const colorMode = document.querySelector('#colorBtn');
+const bgColorPicker = document.getElementById("bgColorPicker");
+const randomRgb = document.getElementById('randomRgb');
+let currentColor = color.value;
+let coloringMode = 'color'; //default to color for user to be able to sketch instantly
 
 
-containerItems.forEach((item)=> {
 
-    item.addEventListener('mouseover', function(event) {
-
-         event.target.style.backgroundColor = "pink";
-         console.log(event);
-    });
-});
-
-// Things to do:
-//      1. Make the canvas adjustable
-//      2. Add color wheel - make a variable
-//      3. Add eraser
-//      4. Add clear
