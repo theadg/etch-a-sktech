@@ -121,4 +121,17 @@ function randomRgbColor(){
     // return randomColor;
 }
 
+function createGrid(gridSize){
+    for (let i = 1; i <= (gridSize*gridSize); i++){
+
+        const gridItem = document.createElement("div");
+        gridItem.classList.add("grid-item");
+        gridItem.setAttribute('id', 'gridItem');
+        gridItem.addEventListener('mouseover', changeColorMain);
+        gridItem.addEventListener('mousedown', changeColorMain);
+
+        gridContainer.appendChild(gridItem);
+    }
+    
+}
 
