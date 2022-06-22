@@ -84,3 +84,15 @@ function changeColorMain(e){
     else if (coloringMode === 'rainbow')
     e.target.style.backgroundColor = `rgb(${randomRgbColor()})`;
 }
+
+//variables set to be used in mouse events
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
+
+
+//sets the color of the container
+bgColorPicker.oninput = () => gridContainer.style.backgroundColor = bgColorPicker.value;
+gridContainer.style.backgroundColor = bgColorPicker.value;
+
+
