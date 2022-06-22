@@ -37,3 +37,12 @@ function changeGridSize(gridSize = 16){
     gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, auto)`;
     gridContainer.style.gridTemplateRows = `repeat(${gridSize}, auto)`;
 }
+
+
+//removing all child elements of the grid container
+function resetGrid(){
+    while (gridContainer.firstChild){
+      gridContainer.removeChild(gridContainer.firstChild);
+    }
+    
+  }
