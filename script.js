@@ -13,4 +13,12 @@ let currentColor = color.value;
 let coloringMode = 'color'; //default to color for user to be able to sketch instantly
 
 
+//updating the size label
+function updateSizeValue(value){
+    sizeLabel.innerHTML =`${value} x ${value}`;
+}
 
+// grid size manipulation
+gridSizeSlider.oninput = (e) => {
+     updateSizeValue(e.target.value);
+};
