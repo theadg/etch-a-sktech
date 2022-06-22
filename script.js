@@ -22,3 +22,18 @@ function updateSizeValue(value){
 gridSizeSlider.oninput = (e) => {
      updateSizeValue(e.target.value);
 };
+
+//adjust the grid size based on user input
+function changeGridSize(gridSize = 16){
+ 
+    
+    //creating grid-items
+    createGrid(gridSize);
+
+    const gridItemCount = gridContainer.children.length;
+    console.log(gridItemCount);
+
+    //changing of rows and columns css
+    gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, auto)`;
+    gridContainer.style.gridTemplateRows = `repeat(${gridSize}, auto)`;
+}
