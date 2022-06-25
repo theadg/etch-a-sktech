@@ -11,6 +11,9 @@ const bgColorPicker = document.getElementById("bgColorPicker");
 const randomRgb = document.getElementById('randomRgb');
 let currentColor = color.value;
 let coloringMode = 'color'; //default to color for user to be able to sketch instantly
+let activeBtn = '';
+
+
 
 
 //updating the size label
@@ -60,7 +63,11 @@ gridSizeSlider.onchange = (e) =>{
 //is used to sketch
 colorMode.onclick = () => {
     currentColor = color.value;
+    activeBtn = 'color';
+
+    addActive(colorMode);
     coloringMode = 'color';
+    // removeActive();
 };
     
 //getting the color of the colorPicker
@@ -70,8 +77,13 @@ color.oninput = (e) => {
 
 //changes color mode to eraser
 eraseBtn.onclick = () => {
+
     coloringMode = 'eraser';
-   
+    activeBtn = 'erase';
+
+    // removeActive();
+    addActive(eraseBtn);
+    
 };
 
 //sets the color to use in the canvas
@@ -98,13 +110,20 @@ gridContainer.style.backgroundColor = bgColorPicker.value;
 //changes coloring mode to rainbow
 randomRgb.onclick = () => {
     coloringMode = 'rainbow';
+    activeBtn = 'random';
+
+    // removeActive();
+    addActive(randomRgb);
+  
     };
 
 
 //clears the grid by coloring them to default color
 clearBtn.onclick = () => {
-    
-    countItems();
+    activeBtn = 'clear';
+    addActive(clearBtn);
+    // removeActive();
+ const containerItems = document.querySelectorAll('#gridItem');
     containerItems.forEach((item)=> {
         item.style.backgroundColor =  `${bgColorPicker.value}`;
 
@@ -135,3 +154,24 @@ function createGrid(gridSize){
     
 }
 
+
+//
+function addActive(btn){
+    removeActive();
+    btn.classList.add('active');
+
+
+}
+
+const buttons = document.querySelectorAll("input[type = button]");
+function removeActive(){
+
+    buttons.forEach((button) => {
+        button.classList.remove('active');
+        })
+    // colorMode.classList.remove('active');
+    // randomRgb.classList.remove('active');
+    // eraseBtn.classList.remove('active');
+    // clearBtn.classList.remove('active');
+ 
+}
