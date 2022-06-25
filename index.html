@@ -5,19 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- css -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <input type="color" name="color" id="colorPicker">
-    <input type="color" name="color" id="bgColorPicker">
-    <div class="size-cont">
-        <input type="range" name="" class ="slider" id="gridSizeSlider" min="1" max="64" value = "16" >
-        <p id ="sizeLabel">16 x 16</p>
+
+  
+    <div class="ui-container">
+        
+        <!-- pickers-->
+        <div class="color-pickers">
+            <input type="color" name="color" id="colorPicker" class = "picker" value = "#444444">
+            <input type="color" name="color" id="bgColorPicker"  class = "picker"  value = "#444444">
+        </div>
+        <!-- buttons -->
+        
+        <input type="button" value="Color" id = "colorBtn" class = "btn active">
+        <input type="button" value="random rgb" id="randomRgb" class = "btn">
+        <input type="button" value="Erase" id = "eraseBtn" class = "btn">
+        <input type="button" value="Clear" id = "clearBtn" class = "btn">
+    
+    
+        <div class="size-cont">
+            <input type="range" name="" class ="slider" id="gridSizeSlider" min="1" max="64" value = "16" >
+            <p id ="sizeLabel">16 x 16</p>
+        </div>
+    
     </div>
-    <input type="button" value="color" id = "colorBtn">
-    <input type="button" value="clear" id = "clearBtn">
-    <input type="button" value="erase" id = "eraseBtn">
-    <input type="button" value="random rgb" id="randomRgb" >
+    <!-- grid -->
     <div class="grid-container" id = "gridContainer">
         
     </div>
