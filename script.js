@@ -31,9 +31,7 @@ changeGridSize();  //calling the function for it to run
 
 //adjust the grid size based on user input
 function changeGridSize(gridSize = 16){
- 
-    
-    //creating grid-items
+
     createGrid(gridSize);
 
     const gridItemCount = gridContainer.children.length;
@@ -47,6 +45,7 @@ function changeGridSize(gridSize = 16){
 
 //removing all child elements of the grid container
 function resetGrid(){
+
     while (gridContainer.firstChild){
       gridContainer.removeChild(gridContainer.firstChild);
     }
@@ -63,7 +62,7 @@ gridSizeSlider.onchange = (e) =>{
 //is used to sketch
 colorMode.onclick = () => {
     currentColor = color.value;
-    activeBtn = 'color';
+   
 
     addActive(colorMode);
     coloringMode = 'color';
@@ -104,8 +103,32 @@ document.body.onmouseup = () => (mouseDown = false);
 
 
 //sets the color of the container
-bgColorPicker.oninput = () => gridContainer.style.backgroundColor = bgColorPicker.value;
+
 gridContainer.style.backgroundColor = bgColorPicker.value;
+const bgColor = bgColorPicker.value;
+bgColorPicker.oninput = () => {
+    gridContainer.style.backgroundColor = bgColorPicker.value
+
+
+ const containerItems = document.querySelectorAll('#gridItem');
+     containerItems.forEach((item)=> {
+        item.style.backgroundColor =  `${bgColorPicker.value}`;
+
+    });
+};
+
+
+bgColorPicker.onchange = () => {
+    gridContainer.style.backgroundColor = bgColorPicker.value;
+
+    const containerItems = document.querySelectorAll('#gridItem');
+    containerItems.forEach((item)=> {
+        item.style.backgroundColor =  `${bgColorPicker.value}`;
+
+    });
+};
+
+
 
 //changes coloring mode to rainbow
 randomRgb.onclick = () => {
@@ -120,11 +143,12 @@ randomRgb.onclick = () => {
 
 //clears the grid by coloring them to default color
 clearBtn.onclick = () => {
-    activeBtn = 'clear';
-    addActive(clearBtn);
+    // activeBtn = 'clear';
+    // addActive(clearBtn);
     // removeActive();
  const containerItems = document.querySelectorAll('#gridItem');
-    containerItems.forEach((item)=> {
+    
+ containerItems.forEach((item)=> {
         item.style.backgroundColor =  `${bgColorPicker.value}`;
 
     });
@@ -140,7 +164,7 @@ function randomRgbColor(){
     // return randomColor;
 }
 
-function createGrid(gridSize){
+function createGrid(gridSize = 16){
     for (let i = 1; i <= (gridSize*gridSize); i++){
 
         const gridItem = document.createElement("div");
@@ -159,19 +183,11 @@ function createGrid(gridSize){
 function addActive(btn){
     removeActive();
     btn.classList.add('active');
-
-
 }
 
 const buttons = document.querySelectorAll("input[type = button]");
 function removeActive(){
-
     buttons.forEach((button) => {
         button.classList.remove('active');
         })
-    // colorMode.classList.remove('active');
-    // randomRgb.classList.remove('active');
-    // eraseBtn.classList.remove('active');
-    // clearBtn.classList.remove('active');
- 
 }
