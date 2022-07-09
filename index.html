@@ -16,42 +16,48 @@
 
    
   <div class="main-container">
-    <h1>Etch-A-Sketch</h1>
-    <!-- UI -->
-    <div class="ui-container">
-        
-        <!-- pickers-->
-        <div class="color-pickers">
-            <div class="color-picker-card">
-                <input type="color" name="color" id="colorPicker" class = "picker" value = "#4242424">
-                <p>Fore color</p>
-            </div>
-            <div class="color-picker-card">
-            <input type="color" name="color" id="bgColorPicker"  class = "picker"  value = "#ffffff">
-            <p>Back color</p> 
-            </div>
-        </div>
-
-        <!-- buttons -->
-        <input type="button" value="Color" id = "colorBtn" class = "btn active">
-        <input type="button" value="random rgb" id="randomRgb" class = "btn">
-        <input type="button" value="Erase" id = "eraseBtn" class = "btn">
-        <input type="button" value="Clear" id = "clearBtn" class = "btn">
-    
-        <!-- slider -->
-        <div class="size-cont">
-            <p class = "center" id ="sizeLabel">16 x 16</p>
-            <input type="range" name="" class ="slider" id="gridSizeSlider" min="1" max="64" value = "16" >
-            
-        </div>
-    
+    <div class="title-container">
+        <h1>Etch-A-Sketch</h1>
+        <p>Create your own pixel art</p>
     </div>
 
+    <!-- Interface -->
+    <div class="interface-container">
+        <!-- UI -->
+        <div class="ui-container">
+            
+            <!-- pickers-->
+            <div class="color-pickers">
+                <div class="color-picker-card">
+                    <input type="color" name="color" id="colorPicker" class = "picker" value = "#363636">
+                    <p>Fore color</p>
+                </div>
+                <div class="color-picker-card">
+                <input type="color" name="color" id="bgColorPicker"  class = "picker"  value = "#ffffff">
+                <p>Back color</p> 
+                </div>
+            </div>
 
-    <!-- grid -->
-    <div class="grid-container" id = "gridContainer"> </div>
-</div>
+            <!-- buttons -->
+            <input type="button" value="Color" id = "colorBtn" class = "btn active">
+            <input type="button" value="random rgb" id="randomRgb" class = "btn">
+            <input type="button" value="Erase" id = "eraseBtn" class = "btn">
+            <input type="button" value="Clear" id = "clearBtn" class = "btn">
+        
+            <!-- slider -->
+            <div class="size-cont">
+                <p class = "center" id ="sizeLabel">16 x 16</p>
+                <input type="range" name="" class ="slider" id="gridSizeSlider" min="1" max="64" value = "16" >
+                
+            </div>
+        
+        </div>
+  
 
+        <!-- grid -->
+        <div class="grid-container" id = "gridContainer"> </div>
+    </div>
+    </div>
 
         <!-- linking js -->
         <script src="script.js"></script>
