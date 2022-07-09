@@ -13,6 +13,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
   /* NOTE: Specify height to center properly */
 }
@@ -141,16 +142,38 @@ body{
     padding: 0;
   }
 
+  /* Footer */
+footer{
+position: absolute;
+padding: 1em;
+bottom: 0;
+left: 0;
+width: 100%;
+text-align: center;
+}
   /* MEDIA QUERIES */
 
   @media(max-width: 768px){
+    body{
+      display: block ;
+      /* height: auto; */
+    }
     .main-container{
-       height: 100vh;
-       padding-top: 3em;
+       height: auto;
+       margin-top: 3em;
+       
     }
 
     .interface-container{
       flex-direction: column-reverse;
+      /* padding-bottom: 3em; */
+    }
+
+
+    footer{
+    position: unset;
+    /* margin-top: 30vh; */
+     margin-top: 1.5em;
     }
 
   }
@@ -161,4 +184,8 @@ body{
       height: 300px;
       width: 300px;
   }
+
+  footer{
+    position: unset;     
+    }
 }
