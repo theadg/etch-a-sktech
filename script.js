@@ -1,3 +1,4 @@
+// import html2canvas from 'html2canvas';
 
 const container = document.getElementById('gridContainer');
 const sizeLabel = document.getElementById("sizeLabel");
@@ -191,3 +192,19 @@ function removeActive(){
         button.classList.remove('active');
         })
 }
+
+
+const saveBtn = document.querySelector('#saveBtn');
+
+// I have no clue but this worked
+saveBtn.onclick = () => {
+    // this turns it into a canvas
+    html2canvas((gridContainer), {
+        onrendered: function(canvas) {
+        // this saves the canvas as PNG
+          return Canvas2Image.saveAsPNG(canvas);
+        }
+    });
+};
+
+
